@@ -22,11 +22,18 @@
       "id": 3
     },
     {
-      "id": 4,
-      "message": "Workstation 026 is up and running",
-      "attention": false,
-      "tech": "Sara Wilson",
-      "date": "2019-05-31T19:57:35.544Z"
+      "message": "hola",
+      "attention": true,
+      "tech": "Sam",
+      "date": "2019-09-03T12:30:57.768Z",
+      "id": 4
+    },
+    {
+      "id": 5,
+      "message": "test123456",
+      "attention": true,
+      "tech": "Sam",
+      "date": "2019-09-03T13:16:02.301Z"
     }
   ],
   "techs": [

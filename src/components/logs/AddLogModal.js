@@ -1,33 +1,36 @@
 import React, { useState } from 'react';
 import M from 'materialize-css/dist/js/materialize.min.js';
+import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
 
+import { addLog } from '../../actions/logActions';
 
-const AddLogModal = () => {
+const AddLogModal = ({ addLog }) => {
 	const [message, setMessage] = useState('');
 	const [attention, setAttention] = useState(false);
-  const [tech, setTech] = useState('');
-  
-  const onSubmit = () => {
-    if (message === '' || tech === '') {
-      M.toast({ html: 'Please enter a message and tech' });
-    } else {
-    //   const newLog = {
-    //     message,
-    //     attention,
-    //     tech,
-    //     date: new Date()
-    //   };
+	const [tech, setTech] = useState('');
 
-    //   addLog(newLog);
+	const onSubmit = () => {
+		if (message === '' || tech === '') {
+			M.toast({ html: 'Please enter a message and tech' });
+		} else {
+			const newLog = {
+				message,
+				attention,
+				tech,
+				date: new Date(),
+			};
 
-    //   M.toast({ html: `Log added by ${tech}` });
+			addLog(newLog);
 
-    //   // Clear Fields
-      setMessage('');
-      setTech('');
-      setAttention(false);
-    }
-  };
+			M.toast({ html: `Log added by ${tech}` });
+
+			//   // Clear Fields
+			setMessage('');
+			setTech('');
+			setAttention(false);
+		}
+	};
 
 	return (
 		<div id="add-log-modal" className="modal" style={modalStyle}>
@@ -57,6 +60,10 @@ const AddLogModal = () => {
 						>
 							<option value="" disabled>
 								Select Technician
+							</option>
+
+							<option value="Sam">
+								Sam
 							</option>
 						</select>
 					</div>
@@ -98,4 +105,11 @@ const modalStyle = {
 	height: '75%',
 };
 
-export default AddLogModal;
+AddLogModal.propTypes = {
+	addLog: PropTypes.func.isRequired,
+};
+
+export default connect(
+	null,
+	{ addLog }
+)(AddLogModal);
