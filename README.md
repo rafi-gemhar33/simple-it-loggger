@@ -1,3 +1,5 @@
+For live demo: [click here](https://github-finder-gemhar.netlify.com)
+
 ### __npm install__ 
 for dependencies
 
