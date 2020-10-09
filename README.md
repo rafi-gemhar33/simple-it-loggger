@@ -2,7 +2,7 @@ For live demo: [click here](https://github-finder-gemhar.netlify.com)
 
 This is a simple project where I learned React.
 
-Here I used redux for state management.
+Here I used redux for state management also redux-thunk for async actions.
 
 ### **npm install**
 
